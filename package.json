@@ -1,0 +1,22 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "Namaste React Learning",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Krtyaka/Namaste-React.git"
+  },
+  "author": "Krtyaka Ahuja",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Krtyaka/Namaste-React/issues"
+  },
+  "homepage": "https://github.com/Krtyaka/Namaste-React#readme",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  }
+}
