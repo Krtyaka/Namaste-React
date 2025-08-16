@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 # Namaste React 🚀
-
 
 # Parcel
 - Dev Build
@@ -20,6 +18,3 @@
 - HTTPs
 - Tree Shaking - remove unused code
 - Different dev and prod bundles
-=======
-# Namaste React Learning 🚀
->>>>>>> b9910523b5ab16e4b50a668c8ee471e070f4e0a2
