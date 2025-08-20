@@ -7,12 +7,12 @@ const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState(resList);
   const [inputText, setInputText] = useState("");
 
-  function findRestaurant() {
-    const findRes = listOfRestaurants.find((res) => {
+  function searchRestaurant() {
+    const filteredList = listOfRestaurants.filter((res) => {
       return res.name.toLowerCase().includes(inputText.toLowerCase());
     });
-    if (findRes) {
-      setListOfRestaurants([findRes]);
+    if (filteredList) {
+      setListOfRestaurants(filteredList);
     }
   }
 
@@ -30,13 +30,9 @@ const Body = () => {
               setListOfRestaurants(resList);
             }
           }}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") {
-              findRestaurant();
-            }
-          }}
+          onKeyDown={(e) => e.key === "Enter" && searchRestaurant()}
         />
-        <button className="search-button" onClick={findRestaurant}></button>
+        <button className="search-button" onClick={searchRestaurant}></button>
       </div>
       <div className="filter">
         <button
