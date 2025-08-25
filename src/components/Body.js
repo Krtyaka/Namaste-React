@@ -6,6 +6,8 @@ import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
+  const [filteredList, setFilteredList] = useState([]);
+
   const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
@@ -15,6 +17,7 @@ const Body = () => {
   // Using mock data in place of API because of API issue.
   const fetchData = () => {
     setListOfRestaurants(resList);
+    setFilteredList(resList);
   };
 
   /* API issue
@@ -41,7 +44,7 @@ const Body = () => {
       return res.name.toLowerCase().includes(searchText.toLowerCase());
     });
     if (filteredList) {
-      setListOfRestaurants(filteredList);
+      setFilteredList(filteredList);
     }
   }
 
@@ -64,7 +67,7 @@ const Body = () => {
           onChange={(e) => {
             setSearchText(e.target.value);
             if (e.target.value === "") {
-              setListOfRestaurants(resList);
+              setFilteredList(resList);
             }
           }}
           onKeyDown={(e) => e.key === "Enter" && searchRestaurant()}
@@ -86,7 +89,7 @@ const Body = () => {
         </button>
       </div>
       <div className="restaurant-container">
-        {listOfRestaurants.map((res) => (
+        {filteredList.map((res) => (
           <RestaurantCard key={res.id} resData={res} />
         ))}
       </div>
